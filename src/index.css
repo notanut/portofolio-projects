@@ -1,13 +1,162 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+    scroll-behavior: smooth;
 }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: black;
+    color: white;
+}
+
+section {
+    margin: 4.5rem 0;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 4.5rem;
+}
+
+.gallery-img {
+    width: 85vw;
+    max-width: 2000px;
+    /* display: grid; */
+    column-count: 3;
+    column-width: 33%;
+    margin: 0 auto;
+    gap: 1rem;
+    /* grid-template-columns: repeat(3, 1fr); */
+    
+}
+
+.gallery-img article img {
+    transition: 1000ms ease-in-out;
+
+}
+
+.gallery-img article img:hover {
+    transform: scale(110%);
+    -webkit-box-shadow: 0px 7px 15px 0px rgba(0,0,0,0.4); 
+    box-shadow: 0px 7px 15px 0px rgba(0,0,0,0.4);
+}
+
+.categories {
+    text-align: center;
+    /* border: 1px solid white; */
+    background: rgb(25, 25, 25);
+    margin: 0 15%;
+    margin-bottom: 7.125rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    border: none;
+    background: none;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 0.975rem;
+    text-transform: uppercase;
+}
+
+button p {
+    position: relative;
+}
+
+button p::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    transition: width 300ms ease-in-out;
+}
+
+button p:hover::after {
+    width: 75%;
+}
+
+button p:hover {
+    font-weight: 700;
+}
+
+/* .categories button:hover, button:focus, button:target {
+    font-weight: 700;
+    border-bottom: 1px solid white;
+} */
+
+.title h1 {
+    font-weight: 900;
+    font-size: 3.5rem;
+}
+
+.title p {
+    font-size: 1.5rem;
+}
+
+img {
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 1450px) {
+    .categories {
+        display: block;
+    }
+}
+
+
+@media screen and (max-width: 1180px) {
+
+
+    .gallery-img {
+        column-count: 2;
+        column-width: 50%;
+    }
+}
+
+@media screen and (max-width: 770px) {
+
+    .gallery-img {
+        column-count: 1;
+        column-width: 100%;
+    }
+
+}
+@media screen and (max-width: 625px) {
+
+    section {
+        margin: 5rem 0;
+    }
+
+    .categories {
+        margin-top: -3rem;
+        margin-bottom: 4rem;
+    }
+    
+    .title h1 {
+        font-size: 3rem;
+    }
+
+    .title p {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
+
